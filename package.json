@@ -1,0 +1,37 @@
+{
+  "name": "redux-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHalseth/Redux-Store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CHalseth/Redux-Store/issues"
+  },
+  "homepage": "https://github.com/CHalseth/Redux-Store#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.4",
+    "if-env": "^1.0.4",
+    "mern-client": "file:client",
+    "react-redux": "^7.2.8",
+    "redux": "^4.2.0",
+    "stripe": "^8.222.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "redux-devtools": "^3.7.0"
+  }
+}
